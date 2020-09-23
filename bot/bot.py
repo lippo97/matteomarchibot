@@ -3,23 +3,18 @@ import os
 import telegram
 import time
 import logging
-from emoji import emojize
 from telegram import Update
 from telegram.ext import CommandHandler, Updater, CallbackContext, JobQueue
 
-from blocking_scheduler import BlockingScheduler
-
-logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-                    level=logging.INFO)
-logger = logging.getLogger(__name__)
-
-green_circle = emojize(":green_circle:", use_aliases=True)
-red_circle = emojize(":red_circle:", use_aliases=True)
+from .blocking_scheduler import BlockingScheduler
+from .i18n import t
+from .logger import logger
+from .emoji import green_circle, red_circle
 
 scheduler = BlockingScheduler()
 
 def hello(update: Update, context: CallbackContext):
-    update.message.reply_text('Ciao! Sono {} in beta'.format(context.bot.name))
+    update.message.reply_text(t('app.startup_message'))
 
 def start(update: Update, context: CallbackContext):
     def say_hi():
@@ -69,7 +64,6 @@ def main():
     logger.info('Stopping updater thread...')
     updater.stop()
     logger.info('Done!')
-    exit(0)
 
 if __name__ == "__main__":
     main()
