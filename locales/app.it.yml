@@ -8,6 +8,6 @@ it:
     status: "Status: %{status}"
   info:
     version: |
-      %{name} - %{version}
-      In esecuzione dal branch %{branch_name}
-      Codice in %{remote_repo}
+      %{name} %{version}
+      In esecuzione dal branch <i>%{branch_name}</i>
+      Codice su <a href="%{remote_repo}">github.com</a>

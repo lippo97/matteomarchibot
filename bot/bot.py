@@ -12,7 +12,7 @@ from .i18n_conf import t
 from .logger import logger
 from .emoji import green_circle, red_circle
 from .events import events
-from .git import repo
+from .git import branch_name, remote_repo, version as repo_version
 import yaml
 
 JOBS = 'jobs'
@@ -49,13 +49,13 @@ def status(update: Update, context: CallbackContext):
     update.message.reply_text(t('app.scheduling.status', status=status))
 
 def version(update: Update, context: CallbackContext):
-    kwargs = {
+    repo = {
         'name': context.bot.name,
-        'version': 'test',
-        'branch_name': repo.active_branch.name,
-        'remote_repo': 'https://github.com/lippo97',
+        'version': repo_version,
+        'branch_name': branch_name,
+        'remote_repo': remote_repo,
     }
-    update.message.reply_text(t('app.info.version', **kwargs))
+    update.message.reply_text(t('app.info.version', **repo), parse_mode=telegram.ParseMode.HTML)
 
 def main():
     LOGIN_TOKEN = os.getenv('LOGIN_TOKEN')
@@ -63,7 +63,6 @@ def main():
         print('Environment variable LOGIN_TOKEN not found.', file=sys.stderr)
         exit(1)
 
-    data = 'ciao'
     updater = Updater(token=LOGIN_TOKEN, use_context=True)
     dp = updater.dispatcher
 
