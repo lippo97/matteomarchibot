@@ -1,2 +1,8 @@
 it:
   startup_message: "Ciao, Mondo!"
+  scheduling:
+    enabled: "Bot abilitato!"
+    disabled: "Bot disabilitato."
+    already_enabled: "Il bot è già stato abilitato."
+    already_disabled: "Il bot non è abilitato in questa chat."
+    status: "Status: %{status}"
