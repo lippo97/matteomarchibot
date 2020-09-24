@@ -14,6 +14,7 @@ schedule = "*"
 python-i18n = {extras = ["yaml"], version = "*"}
 apscheduler = "*"
 dateparser = "*"
+gitpython = "*"
 
 [requires]
 python_version = "3.8"

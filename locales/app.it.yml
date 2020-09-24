@@ -6,3 +6,8 @@ it:
     already_enabled: "Il bot è già stato abilitato."
     already_disabled: "Il bot non è abilitato in questa chat."
     status: "Status: %{status}"
+  info:
+    version: |
+      %{name} - %{version}
+      In esecuzione dal branch %{branch_name}
+      Codice in %{remote_repo}

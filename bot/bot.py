@@ -12,6 +12,7 @@ from .i18n_conf import t
 from .logger import logger
 from .emoji import green_circle, red_circle
 from .events import events
+from .git import repo
 import yaml
 
 JOBS = 'jobs'
@@ -47,6 +48,15 @@ def status(update: Update, context: CallbackContext):
     status = green_circle if JOBS in context.chat_data else red_circle
     update.message.reply_text(t('app.scheduling.status', status=status))
 
+def version(update: Update, context: CallbackContext):
+    kwargs = {
+        'name': context.bot.name,
+        'version': 'test',
+        'branch_name': repo.active_branch.name,
+        'remote_repo': 'https://github.com/lippo97',
+    }
+    update.message.reply_text(t('app.info.version', **kwargs))
+
 def main():
     LOGIN_TOKEN = os.getenv('LOGIN_TOKEN')
     if LOGIN_TOKEN in (None, 'INSERT_TOKEN_HERE'):
@@ -61,6 +71,7 @@ def main():
     dp.add_handler(CommandHandler("status", status, pass_chat_data=True))
     dp.add_handler(CommandHandler("start", start, pass_chat_data=True))
     dp.add_handler(CommandHandler("stop", stop, pass_chat_data=True))
+    dp.add_handler(CommandHandler("version", version))
 
     updater.start_polling()
     try:

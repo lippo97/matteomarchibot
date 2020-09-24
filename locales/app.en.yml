@@ -6,3 +6,8 @@ en:
     already_enabled: "Bot already running for this chat."
     already_disabled: "Bot isn't running for this chat."
     status: "Status: %{status}"
+  info:
+    version: |
+      %{name} - %{version}
+      Running on branch %{branch_name}
+      Code on %{remote_repo}
