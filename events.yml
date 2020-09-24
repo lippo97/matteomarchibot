@@ -11,3 +11,7 @@ events:
     date: "16/06/1996"
     time: "13:00"
     message: "Auguri Paul"
+  san_terenzio:
+    date: "24/09"
+    time: "9:30"
+    message: "Auguri Terenzio"
