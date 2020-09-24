@@ -7,7 +7,23 @@ en:
     already_disabled: "Bot isn't running for this chat."
     status: "Status: %{status}"
   info:
+    help: >-
+      Hi, I am %{name}. My task is to greet people and remind events.
+      I was created to take some weight off who handled this job before me.
+
+      I support these commands:
+
+      /start - starts the event reminder
+
+      /stop - stops the event reminder
+
+      /status - checks the event reminder status
+
+      /version - displays information about me
+
+      /help - displays this message
+
     version: |
       %{name} %{version}
-      Running on branch <i>%{branch_name}</i>
-      Code on <a href="%{remote_repo}">github.com</a>
+      Running on branch <i>%{branch_name}</i>.
+      Code on <a href="%{remote_repo}">github.com</a>.

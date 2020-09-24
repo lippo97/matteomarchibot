@@ -7,7 +7,24 @@ it:
     already_disabled: "Il bot non è abilitato in questa chat."
     status: "Status: %{status}"
   info:
+    help: >-
+      Ciao, sono %{name}. Il mio obiettivo è augurare buone feste a tutti.
+      Sono stato creato per alleggerire il carico di lavoro di chi se ne
+      occupava prima di me.
+
+      Supporto i seguenti comandi:
+
+      /start - avvia l'invio dei messaggi
+
+      /stop - ferma l'invio dei messaggi
+
+      /status - controlla lo stato di esecuzione
+
+      /version - mostra informazioni sulla versione
+
+      /help - mostra questo messaggio
+
     version: |
-      %{name} %{version}
-      In esecuzione dal branch <i>%{branch_name}</i>
-      Codice su <a href="%{remote_repo}">github.com</a>
+      matteomarchibot %{version}
+      In esecuzione dal branch <i>%{branch_name}</i>.
+      Codice su <a href="%{remote_repo}">github.com</a>.
