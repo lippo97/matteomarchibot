@@ -22,8 +22,8 @@ def schedule_events(reply_text):
     jobs = scheduler.add_jobs(events_with_callback)
     return jobs
 
-def hello(update: Update, context: CallbackContext):
-    update.message.reply_text(t('app.startup_message'))
+def _help(update: Update, context: CallbackContext):
+    update.message.reply_text(t('app.info.help', name=context.bot.name))
 
 def start(update: Update, context: CallbackContext):
     if JOBS not in context.chat_data:
@@ -66,7 +66,7 @@ def main():
     updater = Updater(token=LOGIN_TOKEN, use_context=True)
     dp = updater.dispatcher
 
-    dp.add_handler(CommandHandler(["hello", "help"], hello))
+    dp.add_handler(CommandHandler("help", _help))
     dp.add_handler(CommandHandler("status", status, pass_chat_data=True))
     dp.add_handler(CommandHandler("start", start, pass_chat_data=True))
     dp.add_handler(CommandHandler("stop", stop, pass_chat_data=True))
