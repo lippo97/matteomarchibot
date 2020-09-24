@@ -15,3 +15,14 @@ events:
     date: "24/09"
     time: "9:30"
     message: "Auguri Terenzio"
+  multiline:
+    date: "24/09"
+    time: "23:25:40"
+    message: >-
+      Ciao, questo è un messaggio multiriga.
+
+      Per create un nuovo paragrafo è necessario separarlo dal precedente tramite due
+      <i>return</i>.
+
+      È possibile scrivere testo <i>corsivo</i>, testo <b>grassetto</b>, testo
+      <u>sottolineato</u>, <a href="https://it.wikipedia.org/wiki/Collegamento_ipertestuale">link</a>.

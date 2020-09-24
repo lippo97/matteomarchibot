@@ -18,7 +18,7 @@ import yaml
 JOBS = 'jobs'
 
 def schedule_events(reply_text):
-    events_with_callback = [(dt, lambda: reply_text(msg)) for dt, msg in events if not dt == None]
+    events_with_callback = [(dt, lambda: reply_text(msg, parse_mode=telegram.ParseMode.HTML)) for dt, msg in events if not dt == None]
     jobs = scheduler.add_jobs(events_with_callback)
     return jobs
 
