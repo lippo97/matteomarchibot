@@ -1,5 +1,5 @@
-from apscheduler.schedulers.blocking import BlockingScheduler
 import logging
+from apscheduler.schedulers.blocking import BlockingScheduler
 
 class MyBlockingScheduler(BlockingScheduler):
 
