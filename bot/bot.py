@@ -56,7 +56,7 @@ def main():
     # Start polling in a different thread
     updater.start_polling()
     # Run the scheduler in the current thread
-    scheduler.idle()
+    scheduler.run_blocking()
 
     # Leave application
     logger.info('Stopping updater thread...')

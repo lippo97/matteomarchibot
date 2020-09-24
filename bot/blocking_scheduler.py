@@ -4,7 +4,7 @@ from schedule import Scheduler
 
 class BlockingScheduler(Scheduler):
 
-    def idle(self):
+    def run_blocking(self):
         try:
             while True:
                 self.run_pending()
