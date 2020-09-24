@@ -1,0 +1,13 @@
+events:
+  christmas:
+    date: "25/12"
+    time: "12:00"
+    message: "Auguri cristo"
+  my_birthday:
+    date: "01/07/1997"
+    time: "13:00"
+    message: "Auguri boss"
+  paolo_birthday:
+    date: "16/06/1996"
+    time: "13:00"
+    message: "Auguri Paul"

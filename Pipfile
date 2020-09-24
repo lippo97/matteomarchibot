@@ -12,6 +12,8 @@ pytest = "*"
 python-dateutil = "*"
 schedule = "*"
 python-i18n = {extras = ["yaml"], version = "*"}
+apscheduler = "*"
+dateparser = "*"
 
 [requires]
 python_version = "3.8"
