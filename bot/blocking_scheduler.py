@@ -2,9 +2,6 @@ import time
 import logging
 from schedule import Scheduler
 
-
-
-
 class BlockingScheduler(Scheduler):
 
     def idle(self):
@@ -14,3 +11,6 @@ class BlockingScheduler(Scheduler):
                 time.sleep(1)
         except KeyboardInterrupt:
             logging.info('Leaving scheduler...')
+
+
+scheduler = BlockingScheduler()

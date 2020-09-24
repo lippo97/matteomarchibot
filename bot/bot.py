@@ -6,12 +6,10 @@ import logging
 from telegram import Update
 from telegram.ext import CommandHandler, Updater, CallbackContext, JobQueue
 
-from .blocking_scheduler import BlockingScheduler
+from .blocking_scheduler import scheduler
 from .i18n import t
 from .logger import logger
 from .emoji import green_circle, red_circle
-
-scheduler = BlockingScheduler()
 
 def hello(update: Update, context: CallbackContext):
     update.message.reply_text(t('app.startup_message'))
